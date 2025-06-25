@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Press Start 2P', cursive;
-  background: #f5dbd6;
+  background: #fff8e7;
   color: #000;
   padding: 20px;
   box-sizing: border-box;
@@ -324,6 +324,7 @@ body:not(:has(:target)) #home,
   border-radius: 6px;
   margin-bottom: 10px;
   border: 1px solid #000;
+  
 }
 
 .menu-item p {
