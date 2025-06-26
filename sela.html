@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,33 +13,34 @@
       <h1>RANDOM PEDIA</h1>
       <nav>
         <ul>
-          <li><a href="index.html">HOME</a></li>
+          <li><a href="#home">HOME</a></li>
           <li><a href="#about">ABOUT</a></li>
           <li class="dropdown">
             <a href="#">MENU</a>
             <ul class="dropdown-content">
-                <li><a href="makanan.html">Makanan</a></li>
-                <li><a href="#">Minuman</a></li>
-               
+              <li><a href="makanan.html">Makanan</a></li>
+              <li><a href="minuman.html">Minuman</a></li>
             </ul>
-            </li>
-          <li><a href="#">CONTACT</a></li>
+          </li>
+          <li><a href="#contact">CONTACT</a></li>
         </ul>
       </nav>
     </header>
-</div>
+  </div>
 
-    <hr />
-    <section id="home" class="section">
+  <hr />
+
+  <!-- HOME -->
+  <section id="home" class="section">
     <div class="image-wrapper">
       <img src="img/home.jpg" alt="Food collage" />
     </div>
- 
-</section>
+  </section>
 
-  <div id="about" class="section">
+  <!-- ABOUT -->
+  <section id="about" class="section">
     <div class="about-content">
-      <img src="img/about.jpg" alt="Food collage" />
+      <img src="img/about.jpg" alt="About Image" />
       <div class="about-text">
         <p>
           Website ini menyediakan berbagai jenis menu makanan yang paling diminati dan sedang viral di kalangan anak muda. Dari makanan kekinian hingga camilan ringan, semua pilihan disajikan dengan tampilan menarik dan informasi yang lengkap. Hal ini membuat pengguna lebih mudah menemukan tren kuliner terbaru yang sedang ramai dibicarakan di media sosial.
@@ -49,7 +50,51 @@
         </p>
       </div>
     </div>
+  </section>
 
-</div>
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
+    <form class="contact-form">
+      <h2>📧 Hubungi Kami</h2>
+
+      <label for="name">Nama</label>
+      <input type="text" id="name" placeholder="Masukkan nama kamu" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Alamat email aktif" required />
+
+      <label for="message">Pesan</label>
+      <textarea id="message" placeholder="Tulis pesan kamu di sini..." required></textarea>
+
+      <button type="submit">Kirim Pesan</button>
+    </form>
+  </section>
+
+  <!-- JS -->
+  <script>
+    const navLinks = document.querySelectorAll("nav a[href^='#']");
+    const sections = document.querySelectorAll(".section");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href").replace("#", "");
+        sections.forEach(section => section.style.display = "none");
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.style.display = "block";
+        }
+      });
+    });
+
+    // Saat halaman dimuat, tampilkan bagian sesuai hash atau default ke home
+    window.addEventListener("DOMContentLoaded", () => {
+      const hash = window.location.hash.replace("#", "") || "home";
+      sections.forEach(section => section.style.display = "none");
+      const sectionToShow = document.getElementById(hash);
+      if (sectionToShow) {
+        sectionToShow.style.display = "block";
+      }
+    });
+  </script>
 </body>
 </html>

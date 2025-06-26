@@ -319,12 +319,21 @@ body:not(:has(:target)) #home,
 
 .menu-item img {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
+  height: auto;
+  object-fit: unset;
   border-radius: 6px;
   margin-bottom: 10px;
-  border: 1px solid #000;
+  border: none;
+  transform: none; /* scale tidak perlu kalau gambar sudah bagus */
 }
+
+
+
+.menu-item img:hover {
+  transform: scale(1.25);
+}
+
+
 
 .menu-item p {
   margin: 0 0 10px;
@@ -362,3 +371,83 @@ body:not(:has(:target)) #home,
 }
 
 
+/* ===== CONTACT SECTION FINAL FIX ===== */
+.contact-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #fff8e7;
+  box-sizing: border-box;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 480px;
+  background: #fff8e7;
+  border: 2px solid #8B4513;
+  border-radius: 12px;
+  padding: 30px 20px;
+  font-family: 'Press Start 2P', cursive;
+  box-shadow: 5px 5px 0px #8B4513;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.contact-form h2 {
+  font-size: 12px;
+  color: #8B4513;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.contact-form label {
+  font-size: 9px;
+  color: #000;
+  align-self: flex-start;
+  margin-bottom: 4px;
+  margin-top: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px;
+  font-size: 8px;
+  border: 2px solid #8B4513;
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 80px;
+}
+
+.contact-form button {
+  margin-top: 20px;
+  background: #8B4513;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px #5a2e0e;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact-form button:hover {
+  background: #5a2e0e;
+  transform: translateY(2px);
+  box-shadow: 0 2px #3c1f07;
+}
