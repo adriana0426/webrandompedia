@@ -13,8 +13,8 @@
       <h1>RANDOM PEDIA</h1>
       <nav>
         <ul>
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#about">ABOUT</a></li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="sela.html#about">ABOUT</a></li>
           <li class="dropdown">
             <a href="#">MENU</a>
             <ul class="dropdown-content">
@@ -22,7 +22,7 @@
               <li><a href="minuman.html">Minuman</a></li>
             </ul>
           </li>
-          <li><a href="#contact">CONTACT</a></li>
+          <li><a href="sela.html#contact">CONTACT</a></li>
         </ul>
       </nav>
     </header>
@@ -72,29 +72,24 @@
 
   <!-- JS -->
   <script>
-    const navLinks = document.querySelectorAll("nav a[href^='#']");
-    const sections = document.querySelectorAll(".section");
-
-    navLinks.forEach(link => {
-      link.addEventListener("click", function (e) {
-        const targetId = this.getAttribute("href").replace("#", "");
-        sections.forEach(section => section.style.display = "none");
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-          targetSection.style.display = "block";
-        }
-      });
-    });
-
-    // Saat halaman dimuat, tampilkan bagian sesuai hash atau default ke home
-    window.addEventListener("DOMContentLoaded", () => {
+    function showSectionByHash() {
       const hash = window.location.hash.replace("#", "") || "home";
-      sections.forEach(section => section.style.display = "none");
-      const sectionToShow = document.getElementById(hash);
-      if (sectionToShow) {
-        sectionToShow.style.display = "block";
+      document.querySelectorAll(".section").forEach(section => {
+        section.style.display = "none";
+      });
+      const target = document.getElementById(hash);
+      if (target) {
+        target.style.display = "block";
       }
-    });
+    }
+  
+    // Saat halaman dimuat
+    window.addEventListener("DOMContentLoaded", showSectionByHash);
+  
+    // Saat hash berubah (misalnya dari #about ke #contact)
+    window.addEventListener("hashchange", showSectionByHash);
   </script>
+  
+  
 </body>
 </html>
