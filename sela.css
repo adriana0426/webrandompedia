@@ -296,7 +296,7 @@ body:not(:has(:target)) #home,
 
 /* ===== Halaman Makanan ===== */
 .menu-wrapper {
-  text-align: center; /* agar kotak berada di tengah */
+  text-align: center; 
 }
 
 
@@ -324,7 +324,7 @@ body:not(:has(:target)) #home,
   border-radius: 6px;
   margin-bottom: 10px;
   border: none;
-  transform: none; /* scale tidak perlu kalau gambar sudah bagus */
+  transform: none;
 }
 
 
@@ -366,8 +366,8 @@ body:not(:has(:target)) #home,
 
 
 .menu-row {
-  text-align: center; /* agar isi tiap baris rata tengah */
-  margin-bottom: 30px; /* beri jarak antar baris */
+  text-align: center; 
+  margin-bottom: 30px; 
 }
 
 
